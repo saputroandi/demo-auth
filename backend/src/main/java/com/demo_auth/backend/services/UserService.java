@@ -20,6 +20,6 @@ public class UserService {
 
         User user = userRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("user tidak di temukan"));
 
-        return UserResponseDto.builder().email(user.getEmail()).password(user.getPassword()).build();
+        return UserResponseDto.builder().email(user.getEmail()).password(user.getPassword()).role(user.getRole()).build();
     }
 }

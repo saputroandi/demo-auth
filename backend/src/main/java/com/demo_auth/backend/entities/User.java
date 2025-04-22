@@ -5,6 +5,8 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -27,4 +29,7 @@ public class User extends BaseEntity {
 
     @OneToMany(mappedBy = "user")
     private List<Post> posts;
+
+    @Enumerated(EnumType.STRING)
+    private Role role; 
 }
