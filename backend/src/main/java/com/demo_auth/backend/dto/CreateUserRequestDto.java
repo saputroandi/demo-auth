@@ -2,6 +2,7 @@ package com.demo_auth.backend.dto;
 
 import com.demo_auth.backend.validator.constraint.PasswordMatch;
 import com.demo_auth.backend.validator.constraint.RoleType;
+import com.demo_auth.backend.validator.constraint.Unique;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
@@ -15,6 +16,7 @@ import lombok.Data;
 public class CreateUserRequestDto {
 
     @Email
+    @Unique(columnName = "email", tableName = "users")
     private String email;
 
     @NotNull
